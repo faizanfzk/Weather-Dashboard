@@ -1,1 +1,70 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
+.card {
+
+  width: 600px;
+  background-color: rgb(17, 17, 68);
+  border-radius: 10px !important;
+  height: 400px;
+  padding: 20px;
+  color: white;
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.city-name {
+  font-size: 34px;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: rgb(13, 221, 228);
+}
+
+.info-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin-bottom: 10px;
+}
+
+.title-info {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 6px;
+  text-transform: capitalize;
+}
+
+.title {
+  font-size: 20px;
+  color: rgb(155, 147, 144);
+  text-align: center;
+}
+
+.error-message {
+  text-transform: capitalize;
+  font-size: 18px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 300px;
+  }
+
+  .city-name {
+    font-size: 26px;
+  }
+}
