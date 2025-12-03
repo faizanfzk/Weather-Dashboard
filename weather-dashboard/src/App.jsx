@@ -36,7 +36,7 @@ function App() {
     ? `https://openweathermap.org/img/wn/${iconCode}@2x.png`
     : "";
 
-
+  //Used debounce function to avoid unncessary api calls on each character
   const debouncedFetch = useCallback(
     debounce((value) => {
       getWeatherData(value);
@@ -47,6 +47,12 @@ function App() {
 
   const handleSearch = useCallback((value) => {
     setCity(value);
+    if (!value) {
+      setError('')
+      setGetWeatherDetails({})
+      setIsDataLoading(false);
+      return
+    }
     setIsDataLoading(true)
     setError('')
     debouncedFetch(value);
@@ -63,7 +69,9 @@ function App() {
             value={city}
             onSearchChange={handleSearch}
           />
+           {city && <div title="Refresh" className="refresh-icon" onClick={()=>getWeatherData(city)}>&#x27f3;</div>}
         </div>
+       
         {
           isDataLoading && <LoaderComponent />
         }
@@ -97,13 +105,13 @@ function App() {
             </div>
             <div>
               <div className={`title ${getWeatherDetails?.weather?.[0]?.main}`}>Humidity</div>
-              <div className="title-info">{`${getWeatherDetails?.main?.humidity }%`|| 'N/A'}</div>
+              <div className="title-info">{`${getWeatherDetails?.main?.humidity}%` || 'N/A'}</div>
             </div>
           </div>
         </>
         }
         {
-          !city && <>Please Enter the city name to get weather</>
+          !city && <div className="no-search-data">Please Enter the Location to get Weather Details</div>
         }
 
 
