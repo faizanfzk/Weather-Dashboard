@@ -6,6 +6,7 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+
 .card {
 
   width: 600px;
@@ -14,8 +15,27 @@
   height: 400px;
   padding: 20px;
   color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
+.card.Clouds{
+  background: linear-gradient(135deg, #6b92ac, #2c3e50);
+  
+}
+.card.Clear{
+   background: linear-gradient(135deg, #f6d365, #fda085);
+}
+.card.Rain{
+   background: linear-gradient(135deg, #4b79a1, #283e51);
+}
+.card.Snow {
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+}
+.card.Snow{
+  background: linear-gradient(135deg, #c3cde0, #525863);
+}
+.card.Haze{
+  background: linear-gradient(135deg, #608860, #3f626b);
+}
 .icon-wrapper {
   display: flex;
   justify-content: center;
@@ -30,7 +50,18 @@
   text-align: center;
   color: rgb(13, 221, 228);
 }
-
+.city-name.Clear{
+  color:#694339
+}
+.city-name.Rain{
+  color: #15212c;
+}
+.city-name.Snow{
+  color:black
+}
+.city-name.Haze{
+  color:yellowgreen
+}
 .info-wrapper {
   display: flex;
   justify-content: space-around;
@@ -52,11 +83,20 @@
   color: rgb(155, 147, 144);
   text-align: center;
 }
-
+.title.Clear{
+  color:#b8482c
+}
+.title.Snow{
+  color:rgb(56, 15, 94)
+}
 .error-message {
   text-transform: capitalize;
   font-size: 18px;
   text-align: center;
+}
+.search-wrapper{
+  display: flex;
+  justify-content: end;
 }
 
 @media only screen and (max-width: 600px) {
